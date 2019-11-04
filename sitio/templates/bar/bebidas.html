@@ -1,0 +1,25 @@
+{% extends 'bar/base.html' %}
+
+{% block content %}
+<table class="table table-striped table-dark">
+        
+        <thead>
+              <tr>
+                <th scope="col"># de orden</th>
+                <th scope="col">ver detalle</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                    {% for b in bebs %} 
+              <tr>
+                <td>{{b.pk}}</td>
+                <td>
+                        <a class="btn btn-primary btn-lg active" role="button" href="{% url 'detalle_bebida' pk=b.pk %}">ver</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    
+{% endblock %}

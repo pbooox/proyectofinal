@@ -13,4 +13,7 @@ urlpatterns = [
     path('ing/<int:pk>/editar', views.editar_ingrediente, name='editar_ingrediente'),
     path('ing/<pk>/borrar', views.borrar_ingrediente, name='borrar_ingrediente'),
     path('cli/', views.clientes , name='clientes'),
+    path('beb/', views.bebidas, name='bebidas'),
+    path('beb/<int:pk>/', views.detalle_bebida, name='detalle_bebida'),
+    
     ]

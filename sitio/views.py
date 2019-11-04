@@ -81,3 +81,11 @@ def borrar_ingrediente(request, pk):
 def clientes(request):
     clis = Cliente.objects.all()
     return render(request, 'bar/clientes.html', {'clis': clis})
+
+def bebidas(request):
+    bebs = Bebida.objects.all()
+    return render(request, 'bar/bebidas.html', {'bebs': bebs})
+
+def detalle_bebida(request, pk):
+    ing = Ingrediente.objects.filter(bebida=pk)
+    return render(request, 'bar/detalle_bebida.html', {'ing': ing})

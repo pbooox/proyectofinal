@@ -1,0 +1,22 @@
+{% extends 'bar/base.html' %}
+
+{% block content %}
+<table class="table table-striped table-dark">
+        
+        <thead>
+              <tr>
+                <th scope="col">nombre</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+                    {% for i in ing %} 
+              <tr>
+                <td>{{i.nombre}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    
+{% endblock %}
