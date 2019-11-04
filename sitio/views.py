@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from django.contrib import messages
-from .models import Cliente, Bebida, DetalleBebida
+from .models import Cliente, Bebida, DetalleBebida, Ingrediente
 from .forms import FormCli, FormIng, BebidaForm
 
 def home(request):
@@ -56,3 +56,8 @@ def nueva_bebida(request, pk):
     else:
         formulario = BebidaForm()
     return render(request, 'bar/nueva_bebida.html', {'formulario': formulario})
+
+def ingredientes(request):
+    ings = Ingrediente.objects.all()
+    return render(request, 'bar/ingredientes.html', {'ings': ings})
+    

@@ -9,4 +9,5 @@ urlpatterns = [
     path('cli/mandar/<int:pk>/', views.mandar_cliente, name='mandar_cliente'),
     path('bebida/nueva/<int:pk>/', views.nueva_bebida, name='nueva_bebida'),
     path('ing/nuevo/', views.nuevo_ingrediente, name='nuevo_ingrediente'),
+    path('ing/', views.ingredientes , name='ingredientes'),
     ]
