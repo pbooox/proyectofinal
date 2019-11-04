@@ -60,4 +60,24 @@ def nueva_bebida(request, pk):
 def ingredientes(request):
     ings = Ingrediente.objects.all()
     return render(request, 'bar/ingredientes.html', {'ings': ings})
-    
+
+def editar_ingrediente(request, pk):
+    ing = get_object_or_404(Ingrediente, pk=pk)
+    if request.method == "POST":
+        formulario = FormIng(request.POST, instance=ing)
+        if formulario.is_valid():
+            ing = formulario.save(commit=False)
+            ing.save()
+            return redirect('ingredientes')
+    else:
+        formulario = FormIng(instance=ing)
+    return render(request, 'bar/nuevo_ingrediente.html', {'formulario': formulario})
+
+def borrar_ingrediente(request, pk):
+    ing = get_object_or_404(Ingrediente, pk=pk)
+    ing.delete()
+    return redirect('ingredientes')
+
+def clientes(request):
+    clis = Cliente.objects.all()
+    return render(request, 'bar/clientes.html', {'clis': clis})

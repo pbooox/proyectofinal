@@ -17,12 +17,8 @@
             <td>{{i.pk}}</td>
             <td>{{i.nombre}}</td>
             <td>
-                <button type="button" class="btn btn-secondary" href="">
-                    Editar
-                </button>
-                <button type="button" class="btn btn-danger" href="">
-                    Eliminar
-                </button>
+                <a class="btn btn-secondary btn-lg active" role="button" href="{% url 'editar_ingrediente' pk=i.pk %}">editar</a>
+                <a class="btn btn-danger btn-lg active" role="button" href="{% url 'borrar_ingrediente' pk=i.pk %}">borrar</a>
             </td>
           </tr>
           {% endfor %}
