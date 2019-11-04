@@ -24,6 +24,7 @@ def nuevo_ingrediente(request):
         if formulario.is_valid():
             ing = formulario.save(commit=False)
             ing.save()
+            return redirect('ingredientes')
     else:
         formulario = FormIng()
     return render(request, 'bar/nuevo_ingrediente.html', {'formulario': formulario})
